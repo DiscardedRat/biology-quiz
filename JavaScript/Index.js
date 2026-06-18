@@ -2,6 +2,10 @@ import * as Audio from './Audio.js';
 import * as QuizUtils from './QuizUtils.js';
 import { QUESTIONS } from "./Questions.js";
 
+window.addEventListener('load', () => {
+  document.getElementById('loader').style.display = 'none';
+});
+
 window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("maxQuestions").textContent = QUESTIONS.length;
 });
