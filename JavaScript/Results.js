@@ -1,6 +1,10 @@
 import * as Audio from './Audio.js';
 import * as QuizUtils from './QuizUtils.js';
 
+window.addEventListener('load', () => {
+  document.getElementById('loader').style.display = 'none';
+});
+
 const answers = JSON.parse(localStorage.getItem("answers") || "[]");
 const selectedQuestions = JSON.parse(localStorage.getItem("selectedQuestions") || "[]");
 
