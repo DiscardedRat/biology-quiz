@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap');
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    background: #0f1a1c;
+    background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(20, 83, 75, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(6, 78, 59, 0.1) 0%, transparent 50%);
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 100%;
+    max-width: 460px;
+    background: #1a2e2f;
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.07);
+    box-shadow:
+        0 0 0 1px rgba(20, 184, 166, 0.05),
+        0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.card-eyebrow {
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #14b8a6;
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 8px;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #f0faf9;
+    letter-spacing: -0.01em;
+}
+
+.subtitle {
+    text-align: center;
+    color: #6b9e9a;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.divider {
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+}
+
+.input-group label {
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: #94c5bf;
+    letter-spacing: 0.01em;
+}
+
+.input-group input {
+    padding: 12px 14px;
+    background: #0f1a1c;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #f0faf9;
+    font-family: 'DM Sans', Arial, sans-serif;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: #3d6663;
+}
+
+.input-group input:focus {
+    border-color: #14b8a6;
+    box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.12);
+}
+
+.input-group input:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* hide number input arrows */
+.input-group input[type=number]::-webkit-inner-spin-button,
+.input-group input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.75rem;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid rgba(255,255,255,0.15);
+    border-radius: 5px;
+    background: #0f1a1c;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+    background: #14b8a6;
+    border-color: #14b8a6;
+}
+
+.checkbox-group input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 9px;
+    border: 2px solid #0f1a1c;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+}
+
+.checkbox-group label {
+    font-size: 0.9rem;
+    color: #94c5bf;
+    cursor: pointer;
+    user-select: none;
+}
+
+#startQuizBtn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: 'DM Sans', Arial, sans-serif;
+    cursor: pointer;
+    background: #14b8a6;
+    color: #0f1a1c;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(20, 184, 166, 0.25);
+}
+
+#startQuizBtn:hover {
+    background: #0d9488;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(20, 184, 166, 0.35);
+}
+
+#startQuizBtn:active {
+    transform: translateY(0);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 360px;
+    background: #1a2e2f;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.07);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.modal-content h2 {
+    margin-bottom: 0.75rem;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    color: #f0faf9;
+    font-size: 1.4rem;
+}
+
+.modal-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #6b9e9a;
+    font-size: 0.9rem;
+}
+
+#closeModalBtn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #14b8a6;
+    color: #0f1a1c;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: 'DM Sans', Arial, sans-serif;
+    transition: background 0.2s, transform 0.15s;
+}
+
+#closeModalBtn:hover {
+    background: #0d9488;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 1.75rem;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+}
+
+.checkbox-group input[type="checkbox"]:focus {
+    outline: none;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+    filter: brightness(0.75);
+    transition: filter 0.1s;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.modal-actions button {
+    flex: 1;
+    padding: 12px;
+}
+
+#confirmCancelBtn,
+#maxQuestionsBackBtn {
+    background: transparent;
+    border: 1.5px solid rgba(255,255,255,0.1);
+    color: #94c5bf;
+    border-radius: 10px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+#confirmCancelBtn:hover,
+#maxQuestionsBackBtn:hover {
+    border-color: #14b8a6;
+    color: #f0faf9;
+}
+
+#confirmOkBtn,
+#maxQuestionsSetBtn {
+    background: #14b8a6;
+    border: none;
+    color: #0f1a1c;
+    border-radius: 10px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+#confirmOkBtn:hover,
+#maxQuestionsSetBtn:hover {
+    background: #0d9488;
+}
+
+.card {
+    position: relative;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
