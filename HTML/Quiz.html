@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Quiz</title>
+    <link rel="icon" type="image/png" href="../Favicon/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Quiz.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <span class="top-bar-eyebrow">Biology Quiz</span>
+            <span id="questionCounter">Question 1 / 1</span>
+        </div>
+        <div id="timerDisplay" class="timer">Unlimited Time</div>
+    </header>
+
+    <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progressBar"></div>
+    </div>
+
+    <main class="quiz-container">
+        <section class="question-card">
+            <p class="question-label">Question</p>
+            <h2 id="questionText">Loading...</h2>
+            <div id="choicesContainer"></div>
+        </section>
+    </main>
+
+    <nav class="navigation">
+        <button id="previousBtn" class="nav-btn">← Back</button>
+        <div class="jump-section">
+            <input type="number" id="jumpInput" min="1" placeholder="#">
+            <button id="jumpBtn" class="nav-btn">Go</button>
+        </div>
+        <button id="nextBtn" class="nav-btn">Next →</button>
+    </nav>
+
+    <div class="submit-bar">
+        <button id="submitBtn">Submit Quiz</button>
+    </div>
+
+    <!-- Submit modal -->
+    <div id="submitModal" class="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Submit Quiz?</h2>
+            <p id="modalSubtitle"></p>
+            <div id="missingList" class="missing-list"></div>
+            <div class="modal-actions">
+                <button id="modalBackBtn" class="modal-back-btn">Back</button>
+                <button id="modalConfirmBtn" class="modal-confirm-btn">Submit anyway</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../JavaScript/Quiz.js"></script>
+</body>
+</html>

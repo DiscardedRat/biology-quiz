@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Quiz | Results</title>
+    <link rel="icon" type="image/png" href="../Favicon/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Results.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <span class="top-bar-eyebrow">Biology Quiz</span>
+            <span>Results</span>
+        </div>
+        <button id="retryBtn">Try Again</button>
+    </header>
+
+    <main class="results-container">
+
+        <section class="score-card">
+
+            <div class="info-btn" id="infoBtn">
+                <span class="material-symbols-outlined">?</span>
+            </div>
+            
+            <div class="help-popup" id="helpPopup">
+                <h3>Scoring System</h3>
+                    <p>
+                    Correct answers earn 1 point. <br>
+                    Wrong answers deduct 0.33 points. <br>
+                    Unanswered questions neither gain nor lose points.
+                    </p>
+            </div>
+            
+            <div class="ring-wrapper">
+                <svg class="ring" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="ring-track" cx="100" cy="100" r="80"/>
+                    <circle class="ring-wrong"     id="ringWrong"      cx="100" cy="100" r="80"/>
+                    <circle class="ring-unanswered" id="ringUnanswered" cx="100" cy="100" r="80"/>
+                    <circle class="ring-correct"   id="ringCorrect"   cx="100" cy="100" r="80"/>
+                </svg>
+                <div class="ring-center">
+                    <span class="ring-score" id="ringScore">0</span>
+                    <span class="ring-label" id="ringLabel">/ 0</span>
+                    <span class="ring-pct" id="ringPct">0%</span>
+                </div>
+            </div>
+
+            <div class="time-used">
+                <span class="time-used-label">Time Used</span>
+                <span class="time-used-value" id="timeUsed">N/A</span>
+            </div>
+            
+            <div class="legend">
+                <div class="legend-group" id="correctGroup">
+                    <button class="legend-btn" id="correctBtn">
+                        <span class="legend-dot correct"></span>
+                        <span class="legend-text">Correct</span>
+                        <span class="legend-count" id="correctCount">0</span>
+                        <span class="legend-chevron">▾</span>
+                    </button>
+                <div class="legend-dropdown" id="correctDropdown"></div>
+            </div>
+
+            <div class="legend-group" id="wrongGroup">
+                <button class="legend-btn" id="wrongBtn">
+                    <span class="legend-dot wrong"></span>
+                    <span class="legend-text">Wrong</span>
+                    <span class="legend-count" id="wrongCount">0</span>
+                    <span class="legend-chevron">▾</span>
+                </button>
+                <div class="legend-dropdown" id="wrongDropdown"></div>
+            </div>
+
+            <div class="legend-group" id="unansweredGroup">
+                <button class="legend-btn" id="unansweredBtn">
+                    <span class="legend-dot unanswered"></span>
+                    <span class="legend-text">Unanswered</span>
+                    <span class="legend-count" id="unansweredCount">0</span>
+                    <span class="legend-chevron">▾</span>
+                </button>
+                    <div class="legend-dropdown" id="unansweredDropdown"></div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script type="module" src="../JavaScript/Results.js"></script>
+</body>
+</html>
