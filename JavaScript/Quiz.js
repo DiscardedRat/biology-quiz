@@ -2,6 +2,10 @@ import * as Audio from './Audio.js';
 import * as QuizUtils from './QuizUtils.js';
 import { QUESTIONS } from './Questions.js';
 
+window.addEventListener('load', () => {
+  document.getElementById('loader').style.display = 'none';
+});
+
 const settings = QuizUtils.loadQuizSettings();
 
 const requestedQuestions = settings.questionCount;
