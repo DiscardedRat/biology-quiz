@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Quiz | Configuration</title>
+    <link rel="icon" type="image/png" href="Favicon/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Index.css">
+</head>
+<body>
+
+<main class="container">
+    <section class="card">
+
+        
+        <p class="card-eyebrow">Biology Quiz</p>
+        <h1>Configure Your Quiz</h1>
+
+        <p class="subtitle">
+            Set up your session before starting.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="input-group">
+            <label for="questionCount">Number of Questions (Max: <span id="maxQuestions">N</span>)</label>
+            <input
+                type="number"
+                id="questionCount"
+                min="1"
+                placeholder="Enter number of questions"
+            >
+        </div>
+
+        <div class="input-group">
+            <label for="timer">Time Limit (Minutes)</label>
+            <input
+                type="number"
+                id="timer"
+                min="1"
+                placeholder="Minimum 1 minute"
+            >
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="unlimitedTime">
+            <label for="unlimitedTime">Unlimited Time</label>
+        </div>
+
+        <button id="startQuizBtn">Start Quiz</button>
+
+    </section>
+</main>
+
+<div id="errorModal" class="modal">
+    <div class="modal-content">
+        <h2>Input Error</h2>
+        <p id="modalMessage"></p>
+        <button id="closeModalBtn">OK</button>
+    </div>
+</div>
+
+<div id="confirmModal" class="modal">
+    <div class="modal-content">
+        <h2>Time Too Long</h2>
+        <p id="confirmMessage">The time limit you entered is too long. Switch to Unlimited Time instead?</p>
+        <div class="modal-actions">
+            <button id="confirmCancelBtn">Cancel</button>
+            <button id="confirmOkBtn">Go Unlimited</button>
+        </div>
+    </div>
+</div>
+
+<div id="maxQuestionsModal" class="modal">
+    <div class="modal-content">
+        <h2>Too Many Questions</h2>
+        <p id="maxQuestionsMessage"></p>
+
+        <div class="modal-actions">
+            <button id="maxQuestionsBackBtn">Back</button>
+            <button id="maxQuestionsSetBtn">Set to Max</button>
+        </div>
+    </div>
+</div>
+    
+<script type="module" src="JavaScript/Index.js"></script>
+</body>
+</html>
