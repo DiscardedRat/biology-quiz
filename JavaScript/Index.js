@@ -150,5 +150,14 @@ document.getElementById("maxQuestionsSetBtn").addEventListener("click", () => {
 
     QuizUtils.closeModal(maxQuestionsModal, startButton);
 });
+
+setTimeout(() => {
+    const loader = document.getElementById('loader');
+    if (loader) {
+      loader.style.transition = 'opacity 0.3s ease';
+      loader.style.opacity = '0';
+      setTimeout(() => loader.remove(), 300);
+    }
+  }, 50);
   
 }
