@@ -2,10 +2,11 @@ import * as Audio from './Audio.js';
 import * as QuizUtils from './QuizUtils.js';
 import { QUESTIONS } from "./Questions.js";
 
-window.addEventListener('load', () => {
-  document.getElementById('loader').style.display = 'none';
-});
+setTimeout(() => {
+  runResults();
+}, 0);
 
+function runResults() {
 window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("maxQuestions").textContent = QUESTIONS.length;
 });
@@ -149,3 +150,5 @@ document.getElementById("maxQuestionsSetBtn").addEventListener("click", () => {
 
     QuizUtils.closeModal(maxQuestionsModal, startButton);
 });
+  
+}
