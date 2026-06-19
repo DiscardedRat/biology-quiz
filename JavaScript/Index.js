@@ -7,9 +7,7 @@ setTimeout(() => {
 }, 0);
 
 function runResults() {
-window.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("maxQuestions").textContent = QUESTIONS.length;
-});
+document.getElementById("maxQuestions").textContent = QUESTIONS.length;
 
 const maxQuestionsModal = document.getElementById("maxQuestionsModal");
 const maxQuestionsMessage = document.getElementById("maxQuestionsMessage");
