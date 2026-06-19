@@ -1,9 +1,11 @@
 import * as Audio from './Audio.js';
 import * as QuizUtils from './QuizUtils.js';
 
-window.addEventListener('load', () => {
-  document.getElementById('loader').style.display = 'none';
-});
+setTimeout(() => {
+  runResults();
+}, 0);
+
+function runResults() {
 
 const answers = JSON.parse(localStorage.getItem("answers") || "[]");
 const selectedQuestions = JSON.parse(localStorage.getItem("selectedQuestions") || "[]");
@@ -181,3 +183,5 @@ infoBtn.addEventListener("click", (e) => {
 document.addEventListener("click", () => {
     helpPopup.classList.remove("open");
 });
+
+}
